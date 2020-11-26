@@ -63,3 +63,72 @@ exports.login_an_user = (req, res) => {
         }
     })
 }
+
+
+
+
+exports.update_an_user = (req, res) => {
+
+    User.findByIdAndUpdate(req.params.user, 
+        {
+           $set : {
+                email: req.body.email,
+                password: req.body.password
+            }
+        },
+        (err, user) => {
+             // Some handle 
+             if (error) {
+                res.status(400);
+                console.log(error);
+                res.json({
+                    message: "erreur serveur"
+                })
+            } else {
+                res.json({
+                    message: "le compte est mis à jour"
+                })
+            }
+           }
+        );
+
+}
+
+exports.update_an_user = (req, res) => {
+
+    User.findByIdAndUpdate(req.params.user, 
+        {
+           $set : {
+                email: req.body.email,
+                password: req.body.password
+            }
+        },
+        (err, user) => {
+             // Some handle 
+             if (error) {
+                res.status(400);
+                console.log(error);
+                res.json({
+                    message: "erreur serveur"
+                })
+            } else {
+                res.json({
+                    message: "le compte est mis à jour"
+                })
+            }
+           }
+        );
+
+}
+
+exports.delete_an_user = (req, res) => {
+    User.findByIdAndRemove(email)
+    .then(() => {
+        res.locals.redirect = "/users";
+        next();
+    })
+    .catch(error => {
+        console.log(`Error deleting user by ID: ${error.message}`);
+        next();
+    });
+}
