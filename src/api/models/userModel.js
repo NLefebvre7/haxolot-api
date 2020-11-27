@@ -10,7 +10,16 @@ let userSchema = new Schema({
     password: {
         type: String,
         required: "Le mot de passe est requis"
+    },
+    name: {
+        type: String,
+    },
+school: {
+        type: String,
+       // required: "Le nom de l'ecole est requis"
     }
+
 });
+
 
 module.exports = mongoose.model('User', userSchema);

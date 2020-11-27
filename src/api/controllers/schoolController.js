@@ -1,11 +1,12 @@
-const School = require('../models/school.model');
+const School = require('../models/schoolModel');
 
-//Simple version, without validation or sanitation
+
 
 //CREATE
 exports.school_create = function(req, res) {
     let school = new School({
-        name: req.body.name
+        name: req.body.name,
+        location: req.body.location
     });
 
     school.save(function(err) {
@@ -15,20 +16,13 @@ exports.school_create = function(req, res) {
         res.send('school Created  successfully')
     })
 };
+ 
 
-//READ
-exports.school_all = (req, res) => {
-    School.find()
-        .sort({ name: -1 })
-        .then((school) => {
-            res.status(200).send(school);
-        })
-};
-
+ 
 //UPDATE
 exports.school_update = function(req, res) {
     School.findByIdAndUpdate(req.params.id, { $set: req.body }, function(err, project) {
-        if (err) return (err);
+        if (err) return (err); 
         res.send('School udpated.');
     });
 };
