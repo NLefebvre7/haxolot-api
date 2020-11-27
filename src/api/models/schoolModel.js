@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let userSchema = new Schema({
-    email: {
+let schoolSchema = new Schema({
+    name: {
         type: String,
-        required: "L'email est requis",
+        required: "Le nom de l'école est requis",
         unique: true
     },
-    password: {
+    location: {
         type: String,
-        required: "Le mot de passe est requis"
+        required: "La localisation est requise"
     }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('School', schoolSchema);
