@@ -3,7 +3,7 @@ const School = require('../models/schoolModel');
 
 
 //CREATE
-exports.school_create = function(req, res) {
+exports.school_create = function(req, res, next) {
     let school = new School({
         name: req.body.name,
         location: req.body.location

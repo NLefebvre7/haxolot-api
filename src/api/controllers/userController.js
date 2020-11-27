@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 
 exports.create_an_user = (req, res) => {
     let new_user = new User(req.body);
+    console.log(req.body);
 
     new_user.save((error, user) => {
         if (error) {
