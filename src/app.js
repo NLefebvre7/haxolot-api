@@ -15,7 +15,7 @@ server.use(bodyParser.json());
 
 
 server.get("/", (req, res) => {
-  res.json({ message: "Haxolot application." });
+  res.json({ message: "Haxolot api application." });
 });
 
 
