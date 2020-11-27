@@ -94,41 +94,20 @@ exports.update_an_user = (req, res) => {
 
 }
 
-exports.update_an_user = (req, res) => {
-
-    User.findByIdAndUpdate(req.params.user, 
-        {
-           $set : {
-                email: req.body.email,
-                password: req.body.password
-            }
-        },
-        (err, user) => {
-             // Some handle 
-             if (error) {
-                res.status(400);
-                console.log(error);
-                res.json({
-                    message: "erreur serveur"
-                })
-            } else {
-                res.json({
-                    message: "le compte est mis à jour"
-                })
-            }
-           }
-        );
-
-}
 
 exports.delete_an_user = (req, res) => {
-    User.findByIdAndRemove(email)
-    .then(() => {
-        res.locals.redirect = "/users";
-        next();
+    Comment.findByIdAndRemove(req.params.email, (error) => {
+        if (error) {
+            res.status(500);
+            console.log(error);
+            res.json({
+                message: "Erreur serveur."
+            })
+        } else {
+            res.status(200);
+            res.json({
+                message: "Utilisateur supprimé !"
+            })
+        }
     })
-    .catch(error => {
-        console.log(`Error deleting user by ID: ${error.message}`);
-        next();
-    });
 }
