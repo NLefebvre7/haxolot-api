@@ -30,4 +30,10 @@ const schoolRoute = require('./api/routes/schoolRoute');
 schoolRoute(server);
 
 
+const memberRoute = require('./api/routes/memberRoute');
+memberRoute(server);
+
+const teamRoute = require('./api/routes/teamRoute');
+teamRoute(server);
+
 server.listen(port, hostname);

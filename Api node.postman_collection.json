@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "237b512b-bd17-4957-9230-4821fcb182a4",
+		"name": "Api node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create a comment for a post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphY3F1ZXMxQG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2MDYyMzA0NjksImV4cCI6MTYwODgyMjQ2OX0.ApqAUMXfNTbmLZJbgusR2UxR2qmKc04EAloBuwivTvQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jacques",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "post_id",
+									"value": "5fbce0fe96a39501caa27958",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts/5fbd200fe79dd3011477bfe4/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"5fbd200fe79dd3011477bfe4",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all comments for a post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/5fbd200fe79dd3011477bfe4/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"5fbd200fe79dd3011477bfe4",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/comments/5fbce4b30376aa00382ea100",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"5fbce4b30376aa00382ea100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/comments/5fbce4b30376aa00382ea100",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"5fbce4b30376aa00382ea100"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Get all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "mon premier article",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "mon contenu",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "25",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/5fbcc0ea8395690062691288",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"5fbcc0ea8395690062691288"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "toto",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts/5fbcc0ea8395690062691288",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"5fbcc0ea8395690062691288"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/5fbcc0f88395690062691289",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"5fbcc0f88395690062691289"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "message",
+									"value": "cool",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/comments/5fbce4b30376aa00382ea100",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"5fbce4b30376aa00382ea100"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create an user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "jacqfghfgues1@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login an user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "jacques1@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzaW9yeUBtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjA2NDc1OTM0LCJleHAiOjE2MDkwNjc5MzR9.BAknndWV07TKGWZnl0wpptqInqf7yC7DK27BKpETTto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "jacques1@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/users/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "School",
+			"item": [
+				{
+					"name": "Create a school",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "team details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzaW9yeUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYwNjQ5OTY1MSwiZXhwIjoxNjA5MDkxNjUxfQ.QItI9x7LHuDqxjRM7RwgejXnk73Hc3XOkU0xqWuzCY4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "team2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/teams/details",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teams",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzaW9yeUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYwNjQ5OTY1MSwiZXhwIjoxNjA5MDkxNjUxfQ.QItI9x7LHuDqxjRM7RwgejXnk73Hc3XOkU0xqWuzCY4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/teams/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teams",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"team3\",\n    \"members\": [{\"name\": \"Matt\", \"phoneNumber\": \"123\"},{\"name\": \"Matt\", \"phoneNumber\": \"1234\"}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/teams/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"teams",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c287b52a-be9d-45d7-aedf-57636b7e019c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "07f2dc2c-6789-4d7f-b9c7-89ea954cc029",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

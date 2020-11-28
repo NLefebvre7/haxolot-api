@@ -84,3 +84,5 @@ exports.user_all = (req, res) => {
             res.status(200).send(user);
         })
 };
+
+
