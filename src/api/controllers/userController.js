@@ -23,6 +23,7 @@ exports.create_an_user = (req, res) => {
 }
 
 exports.login_an_user = (req, res) => {
+
     User.findOne({
         email: req.body.email
     }, (error, user) => {
@@ -50,7 +51,10 @@ exports.login_an_user = (req, res) => {
                         res.json({
                             token
                         })
+                        console.log(jwtMiddleware.verify_token);
+
                     }
+
                 })
             } else {
                 res.status(400);
