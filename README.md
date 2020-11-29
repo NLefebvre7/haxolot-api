@@ -13,10 +13,10 @@ docker-compose up
 ## Back-end testé sur postman (Api node.postman_collection.json)
 
 ### Page d'accueil :
-```
+
 teamDescription), école (school), nom du projet (projectTitle), description du projet (projectDescription) Sortie : String "Team créé"
 
-```
+
 ### Connexion en tant qu'utilisateur :
 ```
 Entrée : login, password (login_an_user) Sortie : token, variable de session Next : entrée token et session, sortie : liste des teams (teamList) (array contenant les nom et école des team appartenant à la même école que l'utilisateur - à modifier si besoin en fonction des informations à afficher), chaque team dans la liste est un lien vers les détails de la team Next : entrée : nom de la team et token , sortie : toutes les informations sur la team (teamDetails)
