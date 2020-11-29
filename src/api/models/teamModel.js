@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-//const memberSchema = require('../models/memberModel');
 
 const Schema = mongoose.Schema;
 
@@ -10,7 +9,7 @@ let memberSchema = new Schema({
     },
     email:{
         type: String,
-        //required: "email requis"
+        required: "email requis"
     },
     phoneNumber:{
         type: String,
@@ -32,16 +31,16 @@ let teamSchema = new Schema({
     },
     projectTitle: {
         type: String,
-        //required: "Le nom du projet",
-        //unique: true
+        required: "Le nom du projet",
+        unique: true
     },
     school: {
         type: String,
-        //required: "La localisation est requise"
+        required: "La localisation est requise"
     },
     projectDescription: {
         type: String,
-        //required:"Donnez les informations"
+        required:"Décrivez votre projet"
     },
     aboutTheTeam: {
         type : String,

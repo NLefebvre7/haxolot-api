@@ -296,12 +296,17 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "jacqfghfgues1@mail.com",
+									"value": "tsiory@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "school",
+									"value": "IPSSI",
 									"type": "text"
 								}
 							]
@@ -323,6 +328,16 @@
 				{
 					"name": "Login an user",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -330,7 +345,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "jacques1@mail.com",
+									"value": "tsiory@gmail.com",
 									"type": "text"
 								},
 								{
@@ -374,25 +389,97 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "jacques1@mail.com",
-									"type": "text"
+									"value": "tsi@gmail.com",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "password",
 									"value": "12345",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/users/delete",
+							"raw": "localhost:3000/users/5fc2e04714c93b002b2c4707",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"users",
-								"delete"
+								"5fc2e04714c93b002b2c4707"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "school",
+									"value": "IPSSI_2",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/5fc2e768ac06a60046a2ffc5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"5fc2e768ac06a60046a2ffc5"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "5fc2e77dac06a60046a2ffc6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzaUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYwNjYwMzk2MiwiZXhwIjoxNjA5MTk1OTYyfQ.yqHKCPAIhRg2zKlE7sH0h2d-8kWhjuGwMGlpKMywoBQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"all"
 							]
 						}
 					},
@@ -407,10 +494,33 @@
 				{
 					"name": "Create a school",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "sqy",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/schools/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"schools",
+								"create"
+							]
 						}
 					},
 					"response": []
@@ -444,7 +554,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "team2",
+									"value": "team7",
 									"type": "text"
 								}
 							]
@@ -471,7 +581,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzaW9yeUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYwNjQ5OTY1MSwiZXhwIjoxNjA5MDkxNjUxfQ.QItI9x7LHuDqxjRM7RwgejXnk73Hc3XOkU0xqWuzCY4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzaW9AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2MDY2MTIyMTcsImV4cCI6MTYwOTIwNDIxN30.PdWxqf6PaKe1EhoNa4D1Zfks-PrUPqJFolWZzFKffuQ",
 									"type": "string"
 								}
 							]
@@ -499,7 +609,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"team3\",\n    \"members\": [{\"name\": \"Matt\", \"phoneNumber\": \"123\"},{\"name\": \"Matt\", \"phoneNumber\": \"1234\"}]\n}",
+							"raw": "{\n    \"name\": \"team7\",\n    \"members\": [{\"name\": \"Matt\", \"email\": \"matt.c@gmail.com\"},{\"name\": \"Matt\", \"email\": \"mat.yg@gmail.com\"}],\n    \"school\" : \"IPS\",\n    \"projectTitle\" : \"Moto connectée\",\n    \"projectDescription\" : \"Nous concevons une moto connectée\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

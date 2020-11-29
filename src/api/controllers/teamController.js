@@ -1,5 +1,5 @@
 const Team = require('../models/teamModel');
-
+const User = require('../models/userModel');
 
 const jwt = require('jsonwebtoken');
 
@@ -24,16 +24,41 @@ exports.create_a_team = (req, res) => {
 }
 
 exports.team_all = (req, res) => {
-    var listTeam = [];
-    Team.find()
-        .sort({ name: -1 })
-        .then((team) => {
-            team.forEach(element => {
-            listTeam.push(element.name);
+
+    //console.log(req.session.email);
+    User.findOne({
+        email: req.session.email
+    }, (error, user) => {
+        if (error) {
+            res.status(500);
+            console.log(error);
+            res.json({
+                message: "User not found."
+            })
+        } else {
+            //console.log(user.school);
+            var listTeam = [];
+            Team.find({
+                school: user.school
             }
-            );
-            res.status(200).send(listTeam);
-        })
+            )
+                .sort({ name: -1 })
+                .then((team) => {
+                    team.forEach(element => {
+                        listTeam.push([element.name, element.school]);
+                    }
+                    );
+
+                    res.status(200).send(listTeam);
+                })
+
+
+        }
+
+
+    }
+    )
+
 };
 
 exports.team_details = (req, res) => {
@@ -47,14 +72,14 @@ exports.team_details = (req, res) => {
                 message: "Erreur serveur."
             })
         } else {
-                res.status(200).send(team);
-                console.log(team);
-                
-            }
-
+            res.status(200).send(team);
+            console.log(team);
 
         }
-)
+
+
+    }
+    )
 };
 
 

@@ -16,7 +16,7 @@ let userSchema = new Schema({
     },
 school: {
         type: String,
-       // required: "Le nom de l'ecole est requis"
+        required: "Le nom de l'ecole est requis"
     }
 
 });

@@ -1,5 +1,8 @@
 const express = require('express')
 const server = express();
+const session = require('express-session');
+
+server.use(session({secret: 'secret'}));
 
 const hostname = '0.0.0.0';
 const port = 3000;
@@ -19,9 +22,6 @@ server.get("/", (req, res) => {
 });
 
 
-
-
-
 const userRoute = require('./api/routes/userRoute');
 userRoute(server);
 
@@ -29,9 +29,6 @@ userRoute(server);
 const schoolRoute = require('./api/routes/schoolRoute');
 schoolRoute(server);
 
-
-const memberRoute = require('./api/routes/memberRoute');
-memberRoute(server);
 
 const teamRoute = require('./api/routes/teamRoute');
 teamRoute(server);
