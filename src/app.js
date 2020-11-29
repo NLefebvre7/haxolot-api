@@ -15,7 +15,7 @@ const bodyParser = require('body-parser');
 server.use(bodyParser.urlencoded());
 server.use(bodyParser.json());
 
-
+ 
 
 server.get("/", (req, res) => {
   res.json({ message: "Haxolot api application." });
@@ -27,10 +27,10 @@ userRoute(server);
 
 
 const schoolRoute = require('./api/routes/schoolRoute');
-schoolRoute(server);
+schoolRoute(server); 
 
 
 const teamRoute = require('./api/routes/teamRoute');
 teamRoute(server);
-
+  
 server.listen(port, hostname);

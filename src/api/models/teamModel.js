@@ -36,7 +36,7 @@ let teamSchema = new Schema({
     },
     school: {
         type: String,
-        required: "La localisation est requise"
+        required: "Le nom de l'ecole est requise"
     },
     projectDescription: {
         type: String,

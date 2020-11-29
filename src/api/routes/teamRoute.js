@@ -8,7 +8,7 @@ module.exports = (server) => {
     server.route('/teams/details').get(jwtMiddleware.verify_token, teamController.team_details);
     /*server.route('/users/update').put(userController.user_update);
     server.route('/users/delete').delete(jwtMiddleware.verify_token, userController.user_delete);
-    
+     
 
     server.route('/users/login').post(userController.login_an_user);
      */

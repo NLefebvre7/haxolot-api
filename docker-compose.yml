@@ -14,8 +14,8 @@ services:
       - './src:/home/node/app'
     links:
       - mongo
-    # networks:
-    #   - my-network
+    networks:
+      - my-network
     env_file:
       - .env
 
@@ -24,8 +24,8 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-#     networks:
-#       - my-network
-# networks:
-#   my-network:
-#     driver: bridge
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge
